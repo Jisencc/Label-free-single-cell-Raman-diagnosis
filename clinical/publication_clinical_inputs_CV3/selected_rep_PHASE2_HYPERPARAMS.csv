@@ -1,0 +1,4 @@
+﻿rep,fold,phase2_hp_method,phase2_C,phase2_l1_ratio
+18,1,inner_cv,1.0,0.25
+18,2,inner_cv,1.0,0.25
+18,3,inner_cv,3.1622776601683795,0.0

@@ -1,0 +1,31 @@
+{
+  "rep": 3,
+  "fold": 4,
+  "base_seed": 2,
+  "outer_seed_used": 10002,
+  "outer_tries": 1,
+  "fixed_epochs": 120,
+  "use_view_fusion": true,
+  "w_all": 0.4,
+  "w_fp": 0.5,
+  "w_ch": 0.09999999999999998,
+  "T": 2.0,
+  "inner_val_logloss": 1.0244954094821717,
+  "best_epoch_by_view": {
+    "all": 9,
+    "fp": 100,
+    "ch": 36
+  },
+  "best_ckpt_select": "max_val_bal_acc (tie: min_val_loss)",
+  "temperature_select": "min_val_logloss",
+  "classes": [
+    "Liver",
+    "Bile",
+    "Pancreas"
+  ],
+  "inner_split": {
+    "ok": 1,
+    "tries": 1,
+    "test_size": 0.2
+  }
+}

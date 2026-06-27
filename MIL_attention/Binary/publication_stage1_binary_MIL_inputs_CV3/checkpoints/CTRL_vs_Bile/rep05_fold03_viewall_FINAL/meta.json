@@ -1,0 +1,31 @@
+{
+  "task": "stage1_MIL_Control_vs_Bile",
+  "disease_label": "Bile",
+  "rep": 5,
+  "fold": 3,
+  "view": "all",
+  "seed": 2045,
+  "use_view_fusion": true,
+  "tuned_T": 0.7,
+  "tuned_w": [
+    0.30000000000000004,
+    0.2,
+    0.5
+  ],
+  "fixed_epochs": 120,
+  "E_star": 18,
+  "final_epoch_rule": "median",
+  "in_dim": 800,
+  "params": {
+    "embed_dim": 128,
+    "attn_dim": 128,
+    "dropout": 0.35,
+    "lr": 0.0002,
+    "weight_decay": 0.0001,
+    "batch_size": 8,
+    "max_instances_train": 128
+  },
+  "pos_weight": 0.8076923076923077,
+  "tuned_json_path": "./mil/paper_MIL_OUT_STAGE1_BIN_CV3_FUSION_ON_TRIPLE_allattn_control_added2/CTRL_vs_Bile/tuned/rep05_fold03_tuned.json",
+  "model_pt_path": "./mil/paper_MIL_OUT_STAGE1_BIN_CV3_FUSION_ON_TRIPLE_allattn_control_added2/CTRL_vs_Bile/checkpoints/rep05_fold03_viewall_FINAL/model.pt"
+}

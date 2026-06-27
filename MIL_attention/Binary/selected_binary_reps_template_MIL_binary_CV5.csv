@@ -1,0 +1,4 @@
+task,disease,selected_rep
+control_vs_Liver,Liver,8
+control_vs_Bile,Bile,2
+control_vs_Pancreas,Pancreas,7

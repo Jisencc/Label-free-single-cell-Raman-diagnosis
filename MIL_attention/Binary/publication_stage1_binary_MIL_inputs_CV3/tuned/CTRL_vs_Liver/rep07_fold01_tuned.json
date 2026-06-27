@@ -1,0 +1,42 @@
+{
+  "task": "stage1_MIL_Control_vs_Liver",
+  "disease_label": "Liver",
+  "rep": 7,
+  "fold": 1,
+  "base_seed": 6,
+  "outer_seed_used": 10006,
+  "outer_tries": 1,
+  "use_view_fusion": true,
+  "fixed_epochs": 120,
+  "final_epoch_rule": "median",
+  "tuned": {
+    "T": 0.7,
+    "val_logloss": 0.5645984098277039,
+    "w_all": 0.0,
+    "w_fp": 1.0,
+    "w_ch": 0.0,
+    "E_star": 5
+  },
+  "inner_split": {
+    "ok": 1,
+    "tries": 1,
+    "test_size": 0.2
+  },
+  "inner_best_by_view": {
+    "all": {
+      "best_epoch": 3,
+      "best_val_bal": 0.9,
+      "best_val_loss": 0.6324886977672577
+    },
+    "fp": {
+      "best_epoch": 5,
+      "best_val_bal": 1.0,
+      "best_val_loss": 0.6218600869178772
+    },
+    "ch": {
+      "best_epoch": 20,
+      "best_val_bal": 0.875,
+      "best_val_loss": 0.16381815820932388
+    }
+  }
+}

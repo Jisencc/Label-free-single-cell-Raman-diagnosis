@@ -1,0 +1,42 @@
+{
+  "task": "stage1_MIL_Control_vs_Bile",
+  "disease_label": "Bile",
+  "rep": 5,
+  "fold": 1,
+  "base_seed": 4,
+  "outer_seed_used": 10004,
+  "outer_tries": 1,
+  "use_view_fusion": true,
+  "fixed_epochs": 120,
+  "final_epoch_rule": "median",
+  "tuned": {
+    "T": 0.7,
+    "val_logloss": 0.00037328543046609604,
+    "w_all": 0.0,
+    "w_fp": 0.0,
+    "w_ch": 1.0,
+    "E_star": 109
+  },
+  "inner_split": {
+    "ok": 1,
+    "tries": 1,
+    "test_size": 0.2
+  },
+  "inner_best_by_view": {
+    "all": {
+      "best_epoch": 109,
+      "best_val_bal": 1.0,
+      "best_val_loss": 0.011089476446315416
+    },
+    "fp": {
+      "best_epoch": 20,
+      "best_val_bal": 0.9166666666666667,
+      "best_val_loss": 0.19364160811528563
+    },
+    "ch": {
+      "best_epoch": 115,
+      "best_val_bal": 1.0,
+      "best_val_loss": 0.0013904749266657745
+    }
+  }
+}

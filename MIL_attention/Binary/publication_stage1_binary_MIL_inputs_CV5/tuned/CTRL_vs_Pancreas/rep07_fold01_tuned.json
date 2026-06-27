@@ -1,0 +1,42 @@
+{
+  "task": "stage1_MIL_Control_vs_Pancreas",
+  "disease_label": "Pancreas",
+  "rep": 7,
+  "fold": 1,
+  "base_seed": 6,
+  "outer_seed_used": 10006,
+  "outer_tries": 1,
+  "use_view_fusion": true,
+  "fixed_epochs": 120,
+  "final_epoch_rule": "median",
+  "tuned": {
+    "T": 0.7,
+    "val_logloss": 1.6346914450703716e-05,
+    "w_all": 0.0,
+    "w_fp": 0.0,
+    "w_ch": 1.0,
+    "E_star": 120
+  },
+  "inner_split": {
+    "ok": 1,
+    "tries": 1,
+    "test_size": 0.2
+  },
+  "inner_best_by_view": {
+    "all": {
+      "best_epoch": 120,
+      "best_val_bal": 1.0,
+      "best_val_loss": 6.793774082325399e-05
+    },
+    "fp": {
+      "best_epoch": 108,
+      "best_val_bal": 1.0,
+      "best_val_loss": 0.005624450743198395
+    },
+    "ch": {
+      "best_epoch": 120,
+      "best_val_bal": 1.0,
+      "best_val_loss": 0.000256895727943629
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "rep": 9,
+  "fold": 4,
+  "base_seed": 8,
+  "outer_seed_used": 10008,
+  "outer_tries": 1,
+  "samplekey_mode": "basic",
+  "use_view_fusion": true,
+  "fusion_weights": {
+    "w_all": 0.0,
+    "w_fp": 0.7000000000000001,
+    "w_ch": 0.29999999999999993
+  },
+  "temperature_T": 0.7,
+  "val_logloss_for_T": 0.42451284358913455,
+  "max_epochs_fixed": 120,
+  "final_epoch_rule": "median",
+  "E_star": 29,
+  "inner_split": {
+    "ok": 1,
+    "tries": 1,
+    "test_size": 0.2
+  },
+  "inner_best_by_view": {
+    "all": {
+      "best_epoch_val_bal_acc": 29,
+      "best_val_bal_acc": 0.9333333333333332,
+      "best_val_loss": 0.4181257039308548
+    },
+    "fp": {
+      "best_epoch_val_bal_acc": 40,
+      "best_val_bal_acc": 0.9523809523809524,
+      "best_val_loss": 0.426196426153183
+    },
+    "ch": {
+      "best_epoch_val_bal_acc": 25,
+      "best_val_bal_acc": 0.8095238095238096,
+      "best_val_loss": 0.7398927807807922
+    }
+  }
+}
