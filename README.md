@@ -1,8 +1,6 @@
-# Raman Spectroscopy Patient-Level Classification Code
+# Label-free single-cell Raman profiling of peripheral immune cells enables multimodal differential diagnosis of hepatopancreatobiliary cancers
 
-This repository contains the publication-ready reproduction code and locked input artifacts for patient-level Raman spectroscopy classification experiments. The code covers classical SVM/PCA Raman-only models, Raman-only MIL attention models, and multimodal clinical + Raman MIL models.
-
-The repository is organized so that every reported CV setting has its own prepared input folder and its own runnable public script. The public scripts replay locked folds, selected repetitions, tuned parameters, saved checkpoints, and selected outputs. Training-monitoring curve/figure folders are intentionally excluded from the public release.
+This repository contains the publication-ready reproduction code. The code covers classical SVM/PCA Raman-only models, Raman-only MIL attention models, and multimodal clinical + Raman MIL models.
 
 ## Repository structure
 
@@ -81,7 +79,7 @@ code4publication/
     └── clinical_mil.pub.sh
 ```
 
-If your local folder contains both `clinical/` and `MIL_attention/Clinical/`, keep the one that corresponds to the final code version you intend to publish. The `MIL_attention/Clinical/` folder is the recommended location for the final multimodal MIL clinical checkpoint-replay code.
+Important folder distinction: `clinical/` is the **classic multimodal clinical fusion** part of the project, whereas `MIL_attention/Clinical/` is the **multimodal clinical + Raman MIL attention** part. Keep both folders if both model families are reported in the paper. They are not duplicates.
 
 ## Task families
 
@@ -103,14 +101,21 @@ This part replays trained MIL models from selected checkpoints and regenerates s
 - The public scripts do not retrain. They load selected checkpoint bundles and replay inference.
 - Training curve and figure folders are intentionally not included.
 
-### 3. Multimodal clinical + Raman MIL
+### 3. Classic multimodal clinical fusion
+
+This part contains the classic, non-MIL multimodal clinical branch. It is separate from the MIL attention models.
+
+- `clinical/`: classic multimodal clinical fusion / clinical-enhanced classical reproduction code.
+- The CV-specific scripts replay the prepared CV3/CV4/CV5 public inputs.
+- Use this folder for the classic clinical model family reported separately from MIL.
+
+### 4. Multimodal clinical + Raman MIL attention
 
 This part replays multimodal MIL checkpoints that combine Raman cell bags with clinical tabular features.
 
-- `MIL_attention/Clinical/`: preferred final location for multimodal MIL clinical reproduction.
-- `clinical/`: optional/legacy location if used in your final folder layout.
+- `MIL_attention/Clinical/`: multimodal clinical + Raman MIL attention checkpoint-replay code.
 - Clinical preprocessors and selected checkpoints are kept in the prepared input folders.
-- Curve outputs are intentionally excluded from the public release.
+- Curve and figure outputs are intentionally excluded from the public release.
 
 ## What is included and what is intentionally excluded
 
@@ -205,24 +210,22 @@ python raman_stage1_MIL_binary_publication_final_CV4.py
 python raman_stage1_MIL_binary_publication_final_CV5.py
 ```
 
-### Multimodal clinical + Raman MIL
-
-Preferred final location:
-
-```bash
-cd code4publication/MIL_attention/Clinical
-python raman_multimodal_MIL_clinical_disease3_publication_final_CV3.py
-python raman_multimodal_MIL_clinical_disease3_publication_final_CV4.py
-python raman_multimodal_MIL_clinical_disease3_publication_final_CV5.py
-```
-
-If you keep the alternative `clinical/` folder:
+### Classic multimodal clinical fusion
 
 ```bash
 cd code4publication/clinical
 python raman_multimodal_disease3_publication_final_CV3.py
 python raman_multimodal_disease3_publication_final_CV4.py
 python raman_multimodal_disease3_publication_final_CV5.py
+```
+
+### Multimodal clinical + Raman MIL attention
+
+```bash
+cd code4publication/MIL_attention/Clinical
+python raman_multimodal_MIL_clinical_disease3_publication_final_CV3.py
+python raman_multimodal_MIL_clinical_disease3_publication_final_CV4.py
+python raman_multimodal_MIL_clinical_disease3_publication_final_CV5.py
 ```
 
 ## Running on HPC
@@ -248,7 +251,7 @@ Classical SVM/PCA scripts usually produce:
 *_roc_points.csv
 ```
 
-MIL replay scripts usually produce:
+MIL attention replay scripts usually produce:
 
 ```text
 *_SUMMARY.csv
@@ -259,8 +262,6 @@ MIL replay scripts usually produce:
 checkpoints/ or models_outer/
 tuned/ or tuned_params/
 ```
-
-The exact filenames vary slightly by task family, but every public script is configured to write outputs into its own reproduction output folder.
 
 ## Reproducibility notes
 
@@ -273,22 +274,14 @@ The exact filenames vary slightly by task family, but every public script is con
 
 ## Data and privacy
 
-Before making the repository public, check that no private or identifiable patient information is included. If clinical covariates are required for reproduction, release only de-identified and approved tables, or provide synthetic/example inputs and instructions for requesting the original data through the appropriate governance route.
 
 ## Citation
 
-If you use this repository, please cite the associated manuscript.
+If you use this repository, please cite our manuscript.
 
-```bibtex
-@article{your_paper_key,
-  title   = {Patient-level Raman spectroscopy classification using classical and MIL-based models},
-  author  = {Author list},
-  journal = {Journal name},
-  year    = {2026},
-  doi     = {DOI when available}
-}
-```
+
 
 ## License
 
-Add the final license chosen by the authors and institution. If unsure, discuss with the supervisory team before making the repository public.
+
+
