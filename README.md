@@ -79,13 +79,13 @@ code4publication/
     └── clinical_mil.pub.sh
 ```
 
-Important folder distinction: `clinical/` is the **classic multimodal clinical fusion** part of the project, whereas `MIL_attention/Clinical/` is the **multimodal clinical + Raman MIL attention** part. Keep both folders if both model families are reported in the paper. They are not duplicates.
+Important folder distinction: `clinical/` is the **classic multimodal clinical fusion** part of the project, whereas `MIL_attention/Clinical/` is the **multimodal clinical + Raman MIL attention** part.
 
 ## Task families
 
 ### 1. Classical Raman-only identification
 
-This part uses patient-level locked reproduction for classical Raman SVM/PCA experiments.
+This part uses patient-level reproduction for classical Raman SVM/PCA experiments.
 
 - `3-cls_identification/`: disease-only 3-class tasks, Liver vs Bile vs Pancreas.
 - `Binary_identification/`: Control vs Liver, Control vs Bile, and Control vs Pancreas.
@@ -98,8 +98,7 @@ This part replays trained MIL models from selected checkpoints and regenerates s
 
 - `MIL_attention/3-CLS/`: disease-only 3-class Raman-only MIL.
 - `MIL_attention/Binary/`: Control-vs-disease Raman-only MIL.
-- The public scripts do not retrain. They load selected checkpoint bundles and replay inference.
-- Training curve and figure folders are intentionally not included.
+- The public scripts do not retrain. They load checkpoint bundles and replay inference.
 
 ### 3. Classic multimodal clinical fusion
 
@@ -115,9 +114,8 @@ This part replays multimodal MIL checkpoints that combine Raman cell bags with c
 
 - `MIL_attention/Clinical/`: multimodal clinical + Raman MIL attention checkpoint-replay code.
 - Clinical preprocessors and selected checkpoints are kept in the prepared input folders.
-- Curve and figure outputs are intentionally excluded from the public release.
 
-## What is included and what is intentionally excluded
+## What is included
 
 Included:
 
@@ -131,14 +129,6 @@ Included:
 - attention cell and patient-summary outputs where available
 - HPC wrapper shell scripts
 
-Excluded:
-
-- `curves/`
-- `curves_inner/`
-- `curves_outer/`
-- `figures/`
-- any private raw data that cannot be released
-- any unselected exploratory repetitions/folds
 
 ## Environment
 
@@ -265,12 +255,6 @@ tuned/ or tuned_params/
 
 ## Reproducibility notes
 
-- All public scripts use locked selected repetitions/folds prepared from the original training outputs.
-- Classical SVM/PCA scripts replay locked splits, tuned hyperparameters, fusion weights, and temperature values.
-- MIL scripts replay selected saved checkpoints and selected tuned metadata.
-- MIL public scripts should not generate training curves or figures.
-- For binary MIL, labels are manually encoded as `0 = Control` and `1 = disease`, so the LabelEncoder ordering issue from some SVM scripts does not apply.
-- For 3-class disease tasks, the disease order is handled consistently by the public scripts.
 
 ## Data and privacy
 
