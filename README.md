@@ -1,6 +1,8 @@
 # Label-free single-cell Raman profiling of peripheral immune cells enables multimodal differential diagnosis of hepatopancreatobiliary cancers
 
-This repository contains the publication-ready reproduction code. The code covers classical SVM/PCA Raman-only models, Raman-only MIL attention models, and multimodal clinical + Raman MIL models.
+This repository contains the publication-ready reproduction code. The code covers classical SVM/PCA Raman-only models, Raman-only MIL attention models, and multimodal clinical + Raman MIL models. 
+
+Please download the raw data files `raman_added2.csv` and `CLINICAL.csv` from our manuscript and replace them accordingly in this package to get started.
 
 ## Repository structure
 
