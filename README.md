@@ -78,7 +78,7 @@ code4publication/
     ├── raman_multimodal_disease3_publication_final_CV3.py
     ├── raman_multimodal_disease3_publication_final_CV4.py
     ├── raman_multimodal_disease3_publication_final_CV5.py
-    └── clinical_mil.pub.sh
+    └── clinical_pub.sh
 ```
 
 Important folder distinction: `clinical/` is the **classic multimodal clinical fusion** part of the project, whereas `MIL_attention/Clinical/` is the **multimodal clinical + Raman MIL attention** part.
